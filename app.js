@@ -10,16 +10,6 @@ var box8 = document.getElementById("8");
 var box9 = document.getElementById("9");
 var x = '<img src="./x.png">';
 var o = "<img src='./o.png'>";
-function gamestart() {
-    var check = Math.floor(Math.random() * 2);
-    if (check == 1) {
-        alert("Computer goes first!");
-        return computerfillbox("0");
-    }
-    else {
-        return alert("You go first!");
-    }
-}
 function reset() {
     box1.innerHTML = "";
     box2.innerHTML = "";
@@ -30,6 +20,17 @@ function reset() {
     box7.innerHTML = "";
     box8.innerHTML = "";
     box9.innerHTML = "";
+}
+function gamestart() {
+    reset();
+    var check = Math.floor(Math.random() * 2);
+    if (check == 1) {
+        alert("Computer goes first!");
+        return computerfillbox("0");
+    }
+    else {
+        return alert("You go first!");
+    }
 }
 function checkwinner() {
     if (box1.innerHTML == box2.innerHTML &&

@@ -11,16 +11,6 @@ const box9: HTMLElement | any = document.getElementById("9");
 const x: string = '<img src="./x.png">';
 const o: string = "<img src='./o.png'>";
 
-function gamestart(): any {
-  const check: number = Math.floor(Math.random() * 2);
-  if (check == 1) {
-    alert("Computer goes first!");
-    return computerfillbox("0");
-  } else {
-    return alert("You go first!");
-  }
-}
-
 function reset() {
   box1.innerHTML = "";
   box2.innerHTML = "";
@@ -32,6 +22,18 @@ function reset() {
   box8.innerHTML = "";
   box9.innerHTML = "";
 }
+
+function gamestart(): any {
+  reset();
+  const check: number = Math.floor(Math.random() * 2);
+  if (check == 1) {
+    alert("Computer goes first!");
+    return computerfillbox("0");
+  } else {
+    return alert("You go first!");
+  }
+}
+
 function checkwinner(): boolean {
   if (
     box1.innerHTML == box2.innerHTML &&

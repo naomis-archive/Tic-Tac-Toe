@@ -76,6 +76,22 @@ function checkwinner() {
         return false;
     }
 }
+function checktie() {
+    if (box1.innerHTML != "" &&
+        box2.innerHTML != "" &&
+        box3.innerHTML != "" &&
+        box4.innerHTML != "" &&
+        box5.innerHTML != "" &&
+        box6.innerHTML != "" &&
+        box7.innerHTML != "" &&
+        box8.innerHTML != "" &&
+        box9.innerHTML != "") {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 function playerturn(box) {
     var clicked = document.getElementById(box);
     if (clicked.innerHTML != "") {
@@ -84,6 +100,9 @@ function playerturn(box) {
     clicked.innerHTML = x;
     if (checkwinner() == true) {
         alert("You win!");
+    }
+    else if (checktie() == true) {
+        alert("It's a tie!");
     }
     else {
         computerturn();
@@ -100,5 +119,8 @@ function computerturn() {
     box.innerHTML = o;
     if (checkwinner() == true) {
         alert("You lose...");
+    }
+    if (checktie() == true) {
+        alert("It's a tie!");
     }
 }

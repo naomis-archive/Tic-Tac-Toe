@@ -173,7 +173,7 @@ function computerturn(box) {
             return computerfillbox("0");
         }
     }
-    else if (box == "2") {
+    if (box == "2") {
         if (box1.innerHTML == x) {
             if (box3.innerHTML == "") {
                 return computerfillbox("3");

@@ -8,16 +8,16 @@ var box6 = document.getElementById("6");
 var box7 = document.getElementById("7");
 var box8 = document.getElementById("8");
 var box9 = document.getElementById("9");
-var x = "<img src='./x.png' />";
-var o = "<img src='./o.png' />";
+var x = '<img src="./x.png">';
+var o = "<img src='./o.png'>";
 function gamestart() {
     var check = Math.floor(Math.random() * 2);
     if (check == 1) {
         alert("Computer goes first!");
-        computerturn();
+        return computerfillbox("0");
     }
     else {
-        alert("You go first!");
+        return alert("You go first!");
     }
 }
 function reset() {
@@ -102,25 +102,325 @@ function playerturn(box) {
         alert("You win!");
     }
     else if (checktie() == true) {
-        alert("It's a tie!");
+        alert("It's a tie.");
     }
     else {
-        computerturn();
+        computerturn(box);
     }
 }
-function computerturn() {
+function computerfillbox(val) {
     var num = Math.floor(Math.random() * 8) + 1;
-    var place = num.toString();
-    console.log(place);
-    var box = document.getElementById(place);
-    if (box.innerHTML != "") {
-        return computerturn();
+    var randomplace = num.toString();
+    var randombox = document.getElementById(randomplace);
+    if (val !== "0") {
+        var place = document.getElementById(val);
+        console.log("Computer logically plays at " + val);
+        place.innerHTML = o;
+        if (checkwinner() == true) {
+            alert("You lose...");
+        }
+        if (checktie() == true) {
+            alert("It's a tie.");
+        }
     }
-    box.innerHTML = o;
-    if (checkwinner() == true) {
-        alert("You lose...");
+    else {
+        if (randombox.innerHTML !== "") {
+            return computerfillbox("0");
+        }
+        randombox.innerHTML = o;
+        console.log("Computer randomly plays at " + randomplace);
+        if (checkwinner() == true) {
+            alert("You lose...");
+        }
+        if (checktie() == true) {
+            alert("It's a tie.");
+        }
     }
-    if (checktie() == true) {
-        alert("It's a tie!");
+}
+function computerturn(box) {
+    if (box == "1") {
+        if (box2.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box4.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box3.innerHTML == x) {
+            if (box2.innerHTML == "") {
+                return computerfillbox("2");
+            }
+        }
+        if (box7.innerHTML == x) {
+            if (box4.innerHTML == "") {
+                return computerfillbox("4");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    else if (box == "2") {
+        if (box1.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box3.innerHTML == x) {
+            if (box2.innerHTML == "") {
+                return computerfillbox("2");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box8.innerHTML == "") {
+                return computerfillbox("8");
+            }
+        }
+        if (box8.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "3") {
+        if (box2.innerHTML == x) {
+            if (box1.innerHTML == "") {
+                return computerfillbox("1");
+            }
+        }
+        if (box6.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box1.innerHTML == x) {
+            if (box2.innerHTML == "") {
+                return computerfillbox("2");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box6.innerHTML == "") {
+                return computerfillbox("6");
+            }
+        }
+        if (box7.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "4") {
+        if (box1.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box6.innerHTML == "") {
+                return computerfillbox("6");
+            }
+        }
+        if (box7.innerHTML == x) {
+            if (box1.innerHTML == "") {
+                return computerfillbox("1");
+            }
+        }
+        if (box6.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "5") {
+        if (box1.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box2.innerHTML == x) {
+            if (box8.innerHTML == "") {
+                return computerfillbox("8");
+            }
+        }
+        if (box3.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box4.innerHTML == x) {
+            if (box6.innerHTML == "") {
+                return computerfillbox("6");
+            }
+        }
+        if (box6.innerHTML == x) {
+            if (box4.innerHTML == "") {
+                return computerfillbox("4");
+            }
+        }
+        if (box7.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box8.innerHTML == x) {
+            if (box2.innerHTML == "") {
+                return computerfillbox("2");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box1.innerHTML == "") {
+                return computerfillbox("1");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "6") {
+        if (box3.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box4.innerHTML == "") {
+                return computerfillbox("4");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box4.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "7") {
+        if (box4.innerHTML == x) {
+            if (box1.innerHTML == "") {
+                return computerfillbox("1");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box8.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box1.innerHTML == x) {
+            if (box4.innerHTML == "") {
+                return computerfillbox("4");
+            }
+        }
+        if (box3.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box8.innerHTML == "") {
+                return computerfillbox("8");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "8") {
+        if (box7.innerHTML == x) {
+            if (box9.innerHTML == "") {
+                return computerfillbox("9");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box2.innerHTML == "") {
+                return computerfillbox("2");
+            }
+        }
+        if (box9.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box2.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
+    }
+    if (box == "9") {
+        if (box6.innerHTML == x) {
+            if (box3.innerHTML == "") {
+                return computerfillbox("3");
+            }
+        }
+        if (box5.innerHTML == x) {
+            if (box1.innerHTML == "") {
+                return computerfillbox("1");
+            }
+        }
+        if (box8.innerHTML == x) {
+            if (box7.innerHTML == "") {
+                return computerfillbox("7");
+            }
+        }
+        if (box7.innerHTML == x) {
+            if (box8.innerHTML == "") {
+                return computerfillbox("8");
+            }
+        }
+        if (box1.innerHTML == x) {
+            if (box5.innerHTML == "") {
+                return computerfillbox("5");
+            }
+        }
+        if (box3.innerHTML == x) {
+            if (box6.innerHTML == "") {
+                return computerfillbox("6");
+            }
+        }
+        else {
+            return computerfillbox("0");
+        }
     }
 }

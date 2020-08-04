@@ -2,6 +2,10 @@
 
 A basic Tic-Tac-Toe game written using TypeScript. The game has basic logic to try preventing the player from winning - you can use the developer console to see when the computer moves logically or randomly.
 
+## Live Version
+
+This page is currently deployed. [View the live website.](https://www.nhcarrigan.com/Tic-Tac-Toe)
+
 ## Improve the logic
 
 Think you can make the logic stronger and the game tougher? Feel free to submit a pull request containing your updated TypeScript file and complied JavaScript file.

@@ -1,5 +1,5 @@
 {
-  "name": "Tic-Tac-Toe",
+  "name": "tic-tac-toe",
   "author": "Nicholas Carrigan",
   "description": "A tic-tac-toe game written in typescript",
   "dependencies": {

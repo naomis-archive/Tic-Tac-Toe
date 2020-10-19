@@ -4,5 +4,6 @@
   "description": "A tic-tac-toe game written in typescript",
   "dependencies": {
     "typescript": "^3.9.3"
-  }
+  },
+  "license": "Hippocratic-2.1"
 }

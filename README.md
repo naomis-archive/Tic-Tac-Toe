@@ -7,7 +7,7 @@ A basic Tic-Tac-Toe game written using TypeScript. The game has basic logic to t
 
 ## Live Version
 
-This page is currently deployed. [View the live website.](https://www.nhcarrigan.com/Tic-Tac-Toe)
+This project is archvied and is thus not currently deployed.
 
 ## Improve the logic
 
